@@ -56,10 +56,10 @@ class ViewController: UIViewController {
     private func fetchWeather(by city: String){
         guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) , let url = URL.urlWeatherApi(city: cityEncoded) else {return}
         let resource = Resource<WeatherResult>(url: url)
-        URLRequest.load(resource: resource).catchAndReturn(WeatherResult.emptyWeather).observe(on: MainScheduler.instance).subscribe(onNext:{[weak self] result in
-            guard let self = self else {return}
-            self.displayWeather(result.main)
-        }).disposed(by: disposeBag)
+        let search = URLRequest.load(resource: resource).catchAndReturn(WeatherResult.emptyWeather).observe(on: MainScheduler.instance)
+        search.map{"\($0.main.temp) Ḟ"}.bind(to: self.temperatureLabel.rx.text).disposed(by: disposeBag)
+        search.map{"\($0.main.humidity) 💦"}.bind(to: self.humdityLabel.rx.text).disposed(by: disposeBag)
+        
     }
     
     private func updateUI(weather: Weather?){
