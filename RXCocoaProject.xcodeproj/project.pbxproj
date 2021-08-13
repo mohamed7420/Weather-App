@@ -3,19 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0579946F7C3188B70E0A29 /* Pods_RXCocoaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251230B6A0EEBD7A4E02A15E /* Pods_RXCocoaProject.framework */; };
 		8BB128D526C69908006E1567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB128D426C69908006E1567 /* AppDelegate.swift */; };
 		8BB128D726C69908006E1567 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB128D626C69908006E1567 /* SceneDelegate.swift */; };
 		8BB128D926C69908006E1567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB128D826C69908006E1567 /* ViewController.swift */; };
 		8BB128DC26C69908006E1567 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB128DA26C69908006E1567 /* Main.storyboard */; };
 		8BB128DE26C69909006E1567 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB128DD26C69909006E1567 /* Assets.xcassets */; };
 		8BB128E126C69909006E1567 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB128DF26C69909006E1567 /* LaunchScreen.storyboard */; };
+		8BB128E926C69CA5006E1567 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB128E826C69CA5006E1567 /* Weather.swift */; };
+		8BB128ED26C69F85006E1567 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB128EC26C69F85006E1567 /* URLRequest+Extension.swift */; };
+		8BB128EF26C6B0E5006E1567 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB128EE26C6B0E5006E1567 /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		251230B6A0EEBD7A4E02A15E /* Pods_RXCocoaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXCocoaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD12357CFCB69F5359E14E0 /* Pods-RXCocoaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXCocoaProject.debug.xcconfig"; path = "Target Support Files/Pods-RXCocoaProject/Pods-RXCocoaProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8BB128D126C69908006E1567 /* RXCocoaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXCocoaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB128D426C69908006E1567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB128D626C69908006E1567 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		8BB128DD26C69909006E1567 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB128E026C69909006E1567 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BB128E226C69909006E1567 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BB128E826C69CA5006E1567 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		8BB128EC26C69F85006E1567 /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
+		8BB128EE26C6B0E5006E1567 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		94D68C1A09323CDDD110D402 /* Pods-RXCocoaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXCocoaProject.release.xcconfig"; path = "Target Support Files/Pods-RXCocoaProject/Pods-RXCocoaProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0579946F7C3188B70E0A29 /* Pods_RXCocoaProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00EA8C5BD50C2EBAD681B5B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD12357CFCB69F5359E14E0 /* Pods-RXCocoaProject.debug.xcconfig */,
+				94D68C1A09323CDDD110D402 /* Pods-RXCocoaProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		39CE29A21AAFF9CAFC0BEB12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				251230B6A0EEBD7A4E02A15E /* Pods_RXCocoaProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8BB128C826C69908006E1567 = {
 			isa = PBXGroup;
 			children = (
 				8BB128D326C69908006E1567 /* RXCocoaProject */,
 				8BB128D226C69908006E1567 /* Products */,
+				00EA8C5BD50C2EBAD681B5B4 /* Pods */,
+				39CE29A21AAFF9CAFC0BEB12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +86,8 @@
 		8BB128D326C69908006E1567 /* RXCocoaProject */ = {
 			isa = PBXGroup;
 			children = (
+				8BB128EB26C69F71006E1567 /* URLRequest+Extensions */,
+				8BB128EA26C69CAA006E1567 /* Model */,
 				8BB128D426C69908006E1567 /* AppDelegate.swift */,
 				8BB128D626C69908006E1567 /* SceneDelegate.swift */,
 				8BB128D826C69908006E1567 /* ViewController.swift */,
@@ -67,6 +99,23 @@
 			path = RXCocoaProject;
 			sourceTree = "<group>";
 		};
+		8BB128EA26C69CAA006E1567 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BB128E826C69CA5006E1567 /* Weather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8BB128EB26C69F71006E1567 /* URLRequest+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BB128EC26C69F85006E1567 /* URLRequest+Extension.swift */,
+				8BB128EE26C6B0E5006E1567 /* URL+Extension.swift */,
+			);
+			path = "URLRequest+Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BB128E526C69909006E1567 /* Build configuration list for PBXNativeTarget "RXCocoaProject" */;
 			buildPhases = (
+				E1C25E5715F2D08CF1AFEAFB /* [CP] Check Pods Manifest.lock */,
 				8BB128CD26C69908006E1567 /* Sources */,
 				8BB128CE26C69908006E1567 /* Frameworks */,
 				8BB128CF26C69908006E1567 /* Resources */,
+				5559931F2C531D414C16EDBB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,11 +183,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5559931F2C531D414C16EDBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RXCocoaProject/Pods-RXCocoaProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RXCocoaProject/Pods-RXCocoaProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RXCocoaProject/Pods-RXCocoaProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1C25E5715F2D08CF1AFEAFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RXCocoaProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8BB128CD26C69908006E1567 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB128EF26C6B0E5006E1567 /* URL+Extension.swift in Sources */,
+				8BB128ED26C69F85006E1567 /* URLRequest+Extension.swift in Sources */,
+				8BB128E926C69CA5006E1567 /* Weather.swift in Sources */,
 				8BB128D926C69908006E1567 /* ViewController.swift in Sources */,
 				8BB128D526C69908006E1567 /* AppDelegate.swift in Sources */,
 				8BB128D726C69908006E1567 /* SceneDelegate.swift in Sources */,
@@ -283,6 +379,7 @@
 		};
 		8BB128E626C69909006E1567 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BD12357CFCB69F5359E14E0 /* Pods-RXCocoaProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +398,7 @@
 		};
 		8BB128E726C69909006E1567 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94D68C1A09323CDDD110D402 /* Pods-RXCocoaProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
