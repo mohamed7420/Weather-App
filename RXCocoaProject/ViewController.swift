@@ -56,9 +56,9 @@ class ViewController: UIViewController {
     private func fetchWeather(by city: String){
         guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) , let url = URL.urlWeatherApi(city: cityEncoded) else {return}
         let resource = Resource<WeatherResult>(url: url)
-        let search = URLRequest.load(resource: resource).catchAndReturn(WeatherResult.emptyWeather).observe(on: MainScheduler.instance)
-        search.map{"\($0.main.temp) Ḟ"}.bind(to: self.temperatureLabel.rx.text).disposed(by: disposeBag)
-        search.map{"\($0.main.humidity) 💦"}.bind(to: self.humdityLabel.rx.text).disposed(by: disposeBag)
+        let search = URLRequest.load(resource: resource).observe(on: MainScheduler.instance).asDriver(onErrorJustReturn: WeatherResult.emptyWeather).asDriver()
+        search.map{"\($0.main.temp) Ḟ"}.drive(self.temperatureLabel.rx.text).disposed(by: disposeBag)
+        search.map{"\($0.main.humidity) 💦"}.drive(self.humdityLabel.rx.text).disposed(by: disposeBag)
         
     }
     
