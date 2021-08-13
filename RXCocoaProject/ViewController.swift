@@ -39,22 +39,21 @@ class ViewController: UIViewController {
     private func fetchWeather(by city: String){
         guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) , let url = URL.urlWeatherApi(city: cityEncoded) else {return}
         let resource = Resource<WeatherResult>(url: url)
-        URLRequest.load(resource: resource).subscribe(onNext:{[weak self] result in
+        URLRequest.load(resource: resource).catchAndReturn(WeatherResult.emptyWeather).observe(on: MainScheduler.instance).subscribe(onNext:{[weak self] result in
             guard let self = self else {return}
             self.displayWeather(result.main)
         }).disposed(by: disposeBag)
     }
     
     private func updateUI(weather: Weather?){
-        DispatchQueue.main.async {
-            if let weather = weather{
-                self.temperatureLabel.text = "\(weather.temp) Ḟ"
-                self.humdityLabel.text = " \(weather.humidity) 💦"
-            }else{
-                self.temperatureLabel.text = "🙄"
-                self.humdityLabel.text = "😩"
-            }
+        if let weather = weather{
+            self.temperatureLabel.text = "\(weather.temp) Ḟ"
+            self.humdityLabel.text = " \(weather.humidity) 💦"
+        }else{
+            self.temperatureLabel.text = "🙄"
+            self.humdityLabel.text = "😩"
         }
     }
 }
+
 
