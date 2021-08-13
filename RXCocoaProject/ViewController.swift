@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        cityNameTextField.rx.value.subscribe(onNext: { city in
+        
+        //Make one single request
+        
+        cityNameTextField.rx.controlEvent(.editingDidEndOnExit).map {self.cityNameTextField.text}.asObservable().subscribe(onNext:{ city in
             if let city = city{
                 if !city.isEmpty{
                     //fetch weather
@@ -29,7 +32,21 @@ class ViewController: UIViewController {
                     self.displayWeather(nil)
                 }
             }
+            
         }).disposed(by: disposeBag)
+        /*
+         cityNameTextField.rx.value.subscribe(onNext: { city in
+         if let city = city{
+         if !city.isEmpty{
+         //fetch weather
+         self.fetchWeather(by: city)
+         }else{
+         //display nil
+         self.displayWeather(nil)
+         }
+         }
+         }).disposed(by: disposeBag)
+         */
     }
 
     private func displayWeather(_ weather: Weather?){
